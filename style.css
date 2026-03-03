@@ -1,0 +1,279 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 100vh;
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;
+  background: #fff;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 80px;
+  font-weight: 900;
+  color: #000;
+  text-decoration: none;
+  line-height: 0.9;
+  letter-spacing: -3px;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 400;
+  color: #222;
+  margin-top: 8px;
+  margin-bottom: 28px;
+}
+
+.nav-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  color: #222;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.8;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.nav-link.active {
+  color: #999;
+  font-weight: 400;
+}
+
+.nav-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-link.small {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555;
+}
+
+.nav-link.small:hover {
+  color: #000;
+}
+
+/* ── Social icons ── */
+.sidebar-bottom {
+  margin-top: auto;
+  transition: opacity 0.2s;
+}
+
+/* Hide social icons when gallery controls are visible */
+body.single-active .sidebar-bottom {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.social {
+  display: flex;
+  gap: 8px;
+}
+
+.social-icon {
+  color: #222;
+  transition: color 0.2s;
+}
+
+.social-icon:hover {
+  color: #666;
+}
+
+/* ── Gallery controls (shown in single view) ── */
+.gallery-controls {
+  position: fixed;
+  bottom: 24px;
+  left: 28px;
+  width: 174px;
+  z-index: 100;
+}
+
+.caption {
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.controls-nav {
+  margin-bottom: 4px;
+}
+
+.control-link {
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+}
+
+.control-link:hover {
+  color: #000;
+}
+
+.control-sep {
+  font-size: 13px;
+  color: #999;
+  margin: 0 2px;
+}
+
+/* ── Content area ── */
+.content {
+  margin-left: 230px;
+  min-height: 100vh;
+}
+
+/* ── Grid (landing/thumbnails) ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 6px;
+}
+
+.grid-item {
+  overflow: hidden;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.grid-item img:hover {
+  opacity: 0.85;
+}
+
+/* Varied row heights for visual interest */
+.grid-item.tall {
+  grid-row: span 2;
+}
+
+/* ── Single image view ── */
+.single-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  height: 100vh;
+}
+
+.single-img {
+  max-width: 100%;
+  max-height: calc(100vh - 32px);
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+/* ── Utility ── */
+.hidden {
+  display: none !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .sidebar-top {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 36px;
+  }
+
+  .name {
+    margin: 0;
+  }
+
+  .nav-main {
+    flex-direction: row;
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  .nav-secondary {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .gallery-controls {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-item.tall {
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

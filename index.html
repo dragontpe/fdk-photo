@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FDK — Street Photography</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <a href="/" class="logo">FDK</a>
+      <div class="name">Fran&ccedil;ois de Kock</div>
+
+      <nav class="nav-main">
+        <a href="/" class="nav-link active">* Street</a>
+      </nav>
+
+      <nav class="nav-secondary">
+        <a href="#" class="nav-link small">* Contact</a>
+        <a href="#" class="nav-link small">&copy;</a>
+      </nav>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="social">
+        <a href="https://www.instagram.com/frankdek45" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="28" height="28"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="6.5" y="6.5" width="11" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="16" cy="8" r="0.8" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content" id="content">
+    <!-- Grid view (landing page) -->
+    <div class="grid" id="grid"></div>
+
+    <!-- Single image view (gallery) -->
+    <div class="single-view hidden" id="singleView">
+      <img class="single-img" id="singleImg" src="" alt="">
+    </div>
+  </main>
+
+  <!-- Gallery controls in sidebar bottom area -->
+  <div class="gallery-controls hidden" id="galleryControls">
+    <div class="caption" id="caption"></div>
+    <div class="controls-nav">
+      <a href="#" id="prevLink" class="control-link">prev</a>
+      <span class="control-sep">/</span>
+      <a href="#" id="nextLink" class="control-link">next</a>
+    </div>
+    <a href="#" id="thumbsLink" class="control-link">show thumbnails</a>
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
