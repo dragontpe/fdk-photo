@@ -207,6 +207,14 @@ body.single-active .sidebar-bottom {
   pointer-events: none;
 }
 
+.empty-gallery {
+  grid-column: 1 / -1;
+  padding: 80px 48px;
+  font-size: 15px;
+  color: #999;
+  letter-spacing: 1px;
+}
+
 /* ── About page ── */
 .about {
   padding: 40px 48px 60px;
