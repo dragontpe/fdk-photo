@@ -181,7 +181,7 @@ body.single-active .sidebar-bottom {
   pointer-events: none;
 }
 
-.grid-item img:hover {
+.grid-item:hover img {
   opacity: 0.85;
 }
 
