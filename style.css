@@ -207,6 +207,30 @@ body.single-active .sidebar-bottom {
   pointer-events: none;
 }
 
+/* ── About page ── */
+.about {
+  padding: 40px 48px 60px;
+  max-width: 720px;
+}
+
+.about-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.about-chinese {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid #ddd;
+}
+
+.about-chinese p {
+  font-size: 15px;
+  line-height: 2;
+}
+
 /* ── Utility ── */
 .hidden {
   display: none !important;
